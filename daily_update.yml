@@ -1,0 +1,31 @@
+# Grain Futures Intelligence Terminal
+
+Forecaster-style Streamlit dashboard for Corn, Wheat and Soybean futures with:
+- market overview
+- seasonality
+- pattern similarity
+- RSI overbought/oversold
+- forecast verification
+- live/news alerts
+- WASDE report monitor and summarizer
+
+## Data
+For correct futures prices, put historical CSVs here:
+
+- `data/ZC_F.csv` Corn futures
+- `data/ZW_F.csv` Wheat futures
+- `data/ZS_F.csv` Soybean futures
+
+CSV required columns: `Date,Open,High,Low,Close,Volume`.
+
+The app will run with sample data if real files are missing. Replace sample files with real futures data from your licensed provider.
+
+## Optional Secrets
+In Streamlit Cloud > Manage app > Settings > Secrets:
+
+```toml
+NEWS_API_KEY = "your_newsapi_key"
+BARCHART_API_KEY = "your_barchart_or_market_data_key"
+```
+
+WASDE monitor uses public USDA pages and does not require a key.

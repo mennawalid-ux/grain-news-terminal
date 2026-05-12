@@ -1,0 +1,8 @@
+from pathlib import Path
+from datetime import datetime
+import json
+
+out = Path('data/news_cache.json')
+out.parent.mkdir(exist_ok=True)
+out.write_text(json.dumps({'updated_at': datetime.utcnow().isoformat(), 'status': 'GitHub Action placeholder'}), encoding='utf-8')
+print('Updated news cache placeholder')
